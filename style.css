@@ -23,42 +23,47 @@ p {
     font-size: 1.2em;
 }
 
-/* PLAYER DO SPOTIFY */
-.spotify-player {
+/* PLAYER DE MÚSICA PERSONALIZADO */
+.audio-player {
     margin: 20px auto;
     width: 80%;
     max-width: 400px;
+    background: #d32f2f;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* IMAGEM DO CENTRO - MAIS LARGA */
+/* IMAGEM DO CENTRO COM AS LATERAIS DENTRO */
+.imagem-centralizada {
+    position: relative;
+    display: inline-block;
+}
+
 .imagem-centro {
-    display: block;
-    margin: 20px auto;
     width: 90%; /* Aumenta a largura para ocupar quase toda a tela */
     max-width: 500px; /* Define um limite máximo para não ficar exagerado */
     height: auto; /* Mantém a proporção correta */
-    border-radius: 10px; /* Deixa as bordas arredondadas (opcional) */
+    border-radius: 10px; /* Deixa as bordas arredondadas */
 }
 
-/* IMAGENS LATERAIS ANIMADAS */
-.imagem-esquerda,
-.imagem-direita {
+/* IMAGENS PEQUENAS ANIMADAS DENTRO DA IMAGEM CENTRAL */
+.imagem-esquerda, .imagem-direita {
     position: absolute;
-    width: 100px; /* Define um tamanho padrão */
+    width: 100px; /* Define um tamanho pequeno */
     height: auto;
-    animation: sobeDesce 5s ease-in-out infinite alternate; /* Animação de subir e descer */
+    animation: sobeDesce 3s ease-in-out infinite alternate;
 }
 
-/* IMAGEM ESQUERDA - Movendo no lado esquerdo */
+/* Ajustando posição para ficar dentro da imagem central */
 .imagem-esquerda {
-    left: 10px;
-    top: 30%;
+    left: 10%;
+    top: 10%;
 }
 
-/* IMAGEM DIREITA - Movendo no lado direito */
 .imagem-direita {
-    right: 10px;
-    top: 50%;
+    right: 10%;
+    top: 10%;
 }
 
 /* Animação de subir e descer */
@@ -67,7 +72,7 @@ p {
         transform: translateY(0);
     }
     100% {
-        transform: translateY(-50px);
+        transform: translateY(-30px);
     }
 }
 
