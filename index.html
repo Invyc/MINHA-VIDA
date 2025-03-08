@@ -1,49 +1,116 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Para Julia 💛</title>
-                <link rel="stylesheet" href="style.css">
-                </head>
-                <body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para a minha Julia</title>
+    <style>
+        body {
+            background-color: #ffeb3b; /* Cor da Lufa-Lufa */
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            color: #4e342e;
+            overflow-x: hidden;
+            position: relative;
+        }
 
-                    <!-- Container das imagens nos cantos -->
-                        <div class="fotos-container">
-                                <img src="IMAGENS/IMG-20250304-WA0006.jpg" alt="Foto 1" class="foto esquerda">
-                                        <img src="IMAGENS/IMG-20250304-WA0004.jpg" alt="Foto 2" class="foto centro">
-                                                <img src= "IMAGENS/IMG-20250304-WA0003.jpg" alt="Foto 3" class="foto direita">
-                                                    </div>
+        .container {
+            margin-top: 50px;
+            position: relative;
+            z-index: 1; /* Para garantir que o conteúdo fique abaixo dos corações */
+        }
 
-                                                        <div class="container">
-                                                                <h1>🌟 Para a minha Julia 🌟</h1>
-                                                                        <p>Feito com muito amor por alguém que te ama muito! 💛</p>
+        h1 {
+            font-size: 2em;
+            color: #3e2723;
+        }
 
-                                                                                        <!-- Player do Spotify -->
-                                                                                                <div class="spotify-player">
-                                                                                                            <iframe style="border-radius:12px" 
-                                                                                                                            src="https://open.spotify.com/embed/track/2KGv51jgAz8OTjNPyRryfq?utm_source=generator&autoplay=1" 
-                                                                                                                                            width="100%" height="152" frameBorder="0" 
-                                                                                                                                                            allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
-                                                                                                                                                                        </iframe>
-                                                                                                                                                                                </div>
+        p {
+            font-size: 1.2em;
+        }
 
-                                                                                                                                                                                        <!-- Mensagem personalizada -->
-                                                                                                                                                                                                <div class="message-box">
-                                                                                                                                                                                                            <p>Amor, você é a razão do meu viver, passar meus dias com você fizeram meus dias melhor muito, você é incrível como é, eu amo muito. Eu espero muito que tudo seja como o planejado, porque eu te quero pro resto da minha vida.</p>
-                                                                                                                                                                                                                    </div>
+        /* Player do Spotify */
+        .spotify-player {
+            margin: 20px auto;
+            width: 80%;
+            max-width: 400px;
+        }
 
-                                                                                                                                                                                                                            <!-- Imagem do brasão da Lufa-Lufa -->
-                                                                                                                                                                                                                                    <img src="IMAGENS/download (3).jpeg" alt="Lufa-Lufa" class="hufflepuff">
-                                                                                                                                                                                                                                            <div class="hearts"></div>
-                                                                                                                                                                                                                                                </div>
+        /* Imagem central */
+        .center-image {
+            width: 90%;
+            max-width: 600px;
+            display: block;
+            margin: 20px auto;
+            position: relative;
+            overflow: hidden; /* Mantém as imagens pequenas dentro */
+        }
 
-                                                                                                                                                                                                                                                    <script src="script.js"></script>
-                                                                                                                                                                                                                                                    </body>
-                                                                                                                                                                                                                                                    </html>                                                
-                                    
-                                                                                                                        
-                                                                                                                                                                
+        /* Imagens animadas dentro da central */
+        .small-image {
+            width: 80px; /* Tamanho menor */
+            position: absolute;
+            animation: moveUpDown 3s infinite alternate ease-in-out;
+        }
 
-                
-                                                                            
+        .left-small {
+            left: 10%;
+            animation-delay: 0s; /* Começa imediatamente */
+        }
+
+        .right-small {
+            right: 10%;
+            animation-delay: 1.5s; /* Pequeno atraso para efeito alternado */
+        }
+
+        /* Animação de sobe e desce */
+        @keyframes moveUpDown {
+            0% { transform: translateY(10px); }
+            100% { transform: translateY(-10px); }
+        }
+
+        /* Corações animados */
+        .hearts {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
+
+        .heart {
+            position: absolute;
+            color: red;
+            font-size: 20px;
+            animation: floatUp 5s linear infinite;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(100vh); opacity: 1; }
+            100% { transform: translateY(-100vh); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>✨ Para a minha Julia ✨</h1>
+        <p>Feito com muito amor por alguém que te ama muito! 💛</p>
+
+        <iframe class="spotify-player" src="https://open.spotify.com/embed/track/6pQhGCLlG4h5tN3EAsFZvz" width="100%" height="152" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+
+        <p>Amor, você é a razão do meu viver...</p>
+
+        <div class="center-image">
+            <img src="imagem_grande.jpg" class="center-image">
+            <img src="imagem_pequena1.jpg" class="small-image left-small">
+            <img src="imagem_pequena2.jpg" class="small-image right-small">
+        </div>
+
+        <div class="hearts">
+            ❤️❤️❤️
+        </div>
+    </div>
+</body>
+</html>
